@@ -1,7 +1,8 @@
 from unittest.mock import patch
 import pytest
-from src.gastos import adicionar_gasto, listar_gastos, total_gastos, remover_gasto
 import os
+from src.gastos import adicionar_gasto, listar_gastos, total_gastos, remover_gasto
+from src.services import buscar_cotacao
 
 # Limpa o arquivo antes de cada teste
 @pytest.fixture(autouse=True)
@@ -44,8 +45,6 @@ def test_remover_gasto():
 def test_remover_indice_invalido():
     with pytest.raises(IndexError):
         remover_gasto(99)
-        from unittest.mock import patch
-from src.services import buscar_cotacao
 
 
 def test_buscar_cotacao_sucesso():
