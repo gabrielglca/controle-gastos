@@ -1,10 +1,10 @@
 [project]
 name = "controle-gastos"
-version = "1.0.0"
+version = "1.1.0"
 requires-python = ">=3.8"
 
 [project.optional-dependencies]
-dev = ["pytest", "ruff"]
+dev = ["pytest", "ruff", "flask", "requests"]
 
 [tool.ruff]
 line-length = 88

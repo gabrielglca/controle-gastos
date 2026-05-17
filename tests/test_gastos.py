@@ -1,3 +1,4 @@
+from unittest.mock import patch
 import pytest
 from src.gastos import adicionar_gasto, listar_gastos, total_gastos, remover_gasto
 import os
@@ -43,3 +44,25 @@ def test_remover_gasto():
 def test_remover_indice_invalido():
     with pytest.raises(IndexError):
         remover_gasto(99)
+        from unittest.mock import patch
+from src.services import buscar_cotacao
+
+
+def test_buscar_cotacao_sucesso():
+    mock_data = {
+        "USDBRL": {"bid": "5.05"},
+        "EURBRL": {"bid": "5.90"}
+    }
+    with patch("src.services.requests.get") as mock_get:
+        mock_get.return_value.json.return_value = mock_data
+        resultado = buscar_cotacao()
+        assert resultado["dolar"] == 5.05
+        assert resultado["euro"] == 5.90
+
+
+def test_buscar_cotacao_erro():
+    with patch("src.services.requests.get") as mock_get:
+        mock_get.side_effect = Exception("Erro de conexão")
+        resultado = buscar_cotacao()
+        assert resultado["dolar"] is None
+        assert resultado["euro"] is None
