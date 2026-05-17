@@ -2,6 +2,8 @@
 
 ![CI](https://github.com/gabrielglca/controle-gastos/actions/workflows/ci.yml/badge.svg)
 
+🌐 **App online:** https://controle-gastos-kisb.onrender.com/
+
 ## 📋 Descrição do Problema
 
 Muitas pessoas têm dificuldade em acompanhar seus gastos do dia a dia, o que leva a decisões financeiras ruins, dívidas e falta de controle do orçamento pessoal. Esse problema afeta especialmente jovens e pessoas de baixa renda que não têm acesso a ferramentas financeiras complexas.
