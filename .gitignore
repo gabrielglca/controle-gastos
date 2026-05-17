@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+gastos.json
+.pytest_cache/
+.ruff_cache/
